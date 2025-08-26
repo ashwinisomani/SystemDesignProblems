@@ -2,15 +2,15 @@
 
 This project simulates a simple call center with employees of different ranks (Operator, Supervisor, Director) handling incoming calls. It demonstrates call dispatching, queuing, and escalation based on employee availability and rank.
 
-## Classes Overview
+### Classes Overview
 
-### `Rank.java`  
+#### `Rank.java`  
 Defines employee hierarchy: **OPERATOR, SUPERVISOR, DIRECTOR**.
 
-### `CallState.java`  
+#### `CallState.java`  
 Represents call status: **READY, IN_PROGRESS, COMPLETE**.
 
-### `Call.java`  
+#### `Call.java`  
 Stores call details: required rank, state, and handler.
 
 **Methods:**
@@ -18,7 +18,7 @@ Stores call details: required rank, state, and handler.
 - `getRank()` / `setRank(Rank rank)` – Get or update the required employee rank.  
 - `getHandler()` / `setHandler(Employee handler)` – Get or assign the employee handling the call.  
 
-### `Employee.java`  
+#### `Employee.java`  
 Abstract class for employees; manages calls and escalation.
 
 **Methods:**
@@ -27,7 +27,7 @@ Abstract class for employees; manages calls and escalation.
 - `completeCall()` – Marks the call COMPLETE and notifies the call center.  
 - `escalateCall()` – Abstract method; escalates the call to a higher rank.  
 
-### `Operator.java` / `Supervisor.java` / `Director.java`  
+#### `Operator.java` / `Supervisor.java` / `Director.java`  
 Employee subclasses handling calls based on rank.
 
 **Methods:**
@@ -36,7 +36,7 @@ Employee subclasses handling calls based on rank.
   - Supervisor escalates to Director  
   - Director cannot escalate  
 
-### `CallCenter.java`  
+#### `CallCenter.java`  
 Manages employees, dispatches calls, and handles queuing and escalation.
 
 **Methods:**
@@ -45,6 +45,6 @@ Manages employees, dispatches calls, and handles queuing and escalation.
 - `notifyCallEscalated(Call call)` – Re-dispatches a call after escalation.  
 - `notifyCallCompleted(Call call)` – Checks queued calls and assigns to available employees.  
 
-### `Main.java`  
+#### `Main.java`  
 Demonstrates employee creation, call center setup, and dispatching multiple calls.
 
