@@ -5,15 +5,15 @@ This project simulates a simple call center with employees of different ranks (O
 ### Classes Overview
 
 #### `Rank.java`  
-Defines employee hierarchy: **OPERATOR, SUPERVISOR, DIRECTOR**.
+Defines employee hierarchy: ***OPERATOR, SUPERVISOR, DIRECTOR***.
 
 #### `CallState.java`  
-Represents call status: **READY, IN_PROGRESS, COMPLETE**.
+Represents call status: ***READY, IN_PROGRESS, COMPLETE***.
 
 #### `Call.java`  
 Stores call details: required rank, state, and handler.
 
-**Methods:**
+***Methods:***
 - `getState()` / `setState(CallState state)` – Get or update the call’s current state.  
 - `getRank()` / `setRank(Rank rank)` – Get or update the required employee rank.  
 - `getHandler()` / `setHandler(Employee handler)` – Get or assign the employee handling the call.  
@@ -21,7 +21,7 @@ Stores call details: required rank, state, and handler.
 #### `Employee.java`  
 Abstract class for employees; manages calls and escalation.
 
-**Methods:**
+***Methods:***
 - `isAvailable()` – Returns `true` if the employee is free to take a call.  
 - `takeCall(Call call)` – Assigns a call to the employee and sets it IN_PROGRESS.  
 - `completeCall()` – Marks the call COMPLETE and notifies the call center.  
@@ -30,7 +30,7 @@ Abstract class for employees; manages calls and escalation.
 #### `Operator.java` / `Supervisor.java` / `Director.java`  
 Employee subclasses handling calls based on rank.
 
-**Methods:**
+***Methods:***
 - `escalateCall()` –  
   - Operator escalates to Supervisor  
   - Supervisor escalates to Director  
@@ -39,7 +39,7 @@ Employee subclasses handling calls based on rank.
 #### `CallCenter.java`  
 Manages employees, dispatches calls, and handles queuing and escalation.
 
-**Methods:**
+***Methods:***
 - `dispatchCall(Call call)` – Assigns a call to the first available employee of required rank; queues if none available.  
 - `findAvailableEmployee(List<? extends Employee> employees, Call call)` – Helper to find a free employee in the given list.  
 - `notifyCallEscalated(Call call)` – Re-dispatches a call after escalation.  
