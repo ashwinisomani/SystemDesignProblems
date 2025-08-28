@@ -16,7 +16,6 @@ public class CallCenter {
         this.directors = directors;
         this.queuedCalls = new LinkedList<>();
     }
-
     public void dispatchCall(Call call) {
         Employee employee = null;
 
@@ -45,7 +44,6 @@ public class CallCenter {
         }
         return null;
     }
-
     public void notifyCallEscalated(Call call) {
         dispatchCall(call);
     }
@@ -72,3 +70,5 @@ public class CallCenter {
         }
     }
 }
+
+
